@@ -9,11 +9,20 @@ var shapeL =         [
     [0,1,1]
 ] ;
 
-
+var shapeI = 
+[
+    [0,0,1,0],
+    [0,0,1,0],
+    [0,0,1,0],
+    [0,0,1,0]
+]
 function getShape(pShape) {
     if (pShape=='L') {
         return shapeL;
-    } else {
+    } if (pShape=='I') {
+        return shapeI;
+    }
+    else {
         return shapeT;
     }
     
