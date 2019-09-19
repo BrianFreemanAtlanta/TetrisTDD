@@ -35,4 +35,21 @@ describe("Tetris", function(){
             ]
         )
     })
+    it("GetShapeOReturnsO", function(){
+        expect(getShape('O')).toEqual(
+            [
+                [1,1],
+                [1,1]
+            ]
+        )
+    })
+    it("GetShapeJReturnsJ", function(){
+        expect(getShape('J')).toEqual(
+            [
+                [0,1,0],
+                [0,1,0],
+                [1,1,0]
+            ]
+        )
+    })
 });
