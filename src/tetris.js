@@ -43,26 +43,38 @@ var shapeO =
     ]
 
     function getShape(pShape) {
+     let retShape = [];
     switch (pShape) {
         case 'T':
-            return shapeT;
+             retShape =  shapeT;
             break;
         case 'I':
-            return shapeI;
+             retShape =  shapeI;
+            break;
         case 'L':
-            return shapeL;
+             retShape =  shapeL;
+            break;
         case 'J':
-            return shapeJ;
+             retShape =  shapeJ;
+            break;
         case 'O':
-            return shapeO;
+             retShape =  shapeO;
+            break;
         case 'S':
-            return shapeS;
+             retShape =  shapeS;
+            break;
         case 'Z':
-            return shapeZ;
+             retShape =  shapeZ;
+            break;
         default:
             break;
     }
-    
+    //now return copy of the array
+    let retShape2=[];
+    for (let index = 0; index < retShape.length; index++) {
+        retShape2[index]=retShape[index].slice();
+    };
+    return retShape2;
 };
 
 function getBoard(X,Y) {
@@ -75,5 +87,34 @@ function getBoard(X,Y) {
         }
         retBoard.push(curArray);
     }
-    return retBoard;
+    return  retBoard;
+};
+// rotate code adapted from https://code.likeagirl.io/rotate-an-2d-matrix-90-degree-clockwise-without-create-another-array-49209ea8b6e6
+function rotateShapeCW(matrix) {
+    const n = matrix.length;
+    const x = Math.floor(n/ 2);
+    const y = n - 1;
+    for (let i = 0; i < x; i++) {
+       for (let j = i; j < y - i; j++) {
+          let k = matrix[i][j];
+          matrix[i][j] = matrix[y - j][i];
+          matrix[y - j][i] = matrix[y - i][y - j];
+          matrix[y - i][y - j] = matrix[j][y - i];
+          matrix[j][y - i] = k
+       }
+    }
+}
+function rotateShapeCCW(matrix) {
+    const n = matrix.length;
+    const x = Math.floor(n/ 2);
+    const y = n - 1;
+    for (let i = 0; i < x; i++) {
+       for (let j = i; j < y - i; j++) {
+          let k = matrix[i][j];
+          matrix[i][j] = matrix[j][y - i];
+          matrix[j][y - i] = matrix[y - i][y - j];
+          matrix[y - i][y - j] = matrix[y - j][i];
+          matrix[y - j][i] = k;
+       }
+    }
 }

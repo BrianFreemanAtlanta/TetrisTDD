@@ -85,5 +85,27 @@ describe("Tetris", function(){
             [0,0,0,0,0],
         ]            
         )
+    })
+    it("rotateCWTIsCorrect", function() {
+        let piece=getShape('T');
+        rotateShapeCW(piece);
+        expect(piece).toEqual(
+            [
+                [0,1,0],
+                [1,1,0],
+                [0,1,0]
+            ]
+        )
+    })    
+    it("rotateCCWTIsCorrect", function() {
+        let piece=getShape('T');
+        rotateShapeCCW(piece);
+        expect(piece).toEqual(
+            [
+                [0,1,0],
+                [0,1,1],
+                [0,1,0]
+            ]
+        )
     })    
 });
