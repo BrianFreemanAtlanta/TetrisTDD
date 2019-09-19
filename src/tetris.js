@@ -65,3 +65,15 @@ var shapeO =
     
 };
 
+function getBoard(X,Y) {
+    var retBoard=[];
+    for (let yIndex = 0; yIndex < Y; yIndex++) {
+        var curArray = [];
+        
+        for (let xPos = 0; xPos < X; xPos++) {
+            curArray.push(0);
+        }
+        retBoard.push(curArray);
+    }
+    return retBoard;
+}
