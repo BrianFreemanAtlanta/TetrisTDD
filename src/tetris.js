@@ -13,6 +13,16 @@ var shapeJ =         [
     [0,1,0],
     [1,1,0]
 ] ;
+var shapeS =         [
+    [0,1,1],
+    [0,1,0],
+    [1,1,0]
+] ;
+var shapeZ =         [
+    [1,1,0],
+    [0,1,0],
+    [0,1,1]
+] ;
 
 var shapeI = 
 [
@@ -37,12 +47,15 @@ function getShape(pShape) {
             return shapeL;
         case 'J':
             return shapeJ;
-            case 'O':
+        case 'O':
             return shapeO;
-        default:
+        case 'S':
+            return shapeS;
+        case 'Z':
+            return shapeZ;
+            default:
             break;
     }
     
 };
 
-// module.exports = getShape;

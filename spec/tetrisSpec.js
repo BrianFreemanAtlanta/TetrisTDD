@@ -52,4 +52,22 @@ describe("Tetris", function(){
             ]
         )
     })
+    it("GetShapeSReturnsS", function(){
+        expect(getShape('S')).toEqual(
+            [
+                [0,1,1],
+                [0,1,0],
+                [1,1,0]
+            ]
+        )
+    })
+    it("GetShapeZReturnsZ", function(){
+        expect(getShape('Z')).toEqual(
+            [
+                [1,1,0],
+                [0,1,0],
+                [0,1,1]
+            ]
+        )
+    })
 });
